@@ -17,6 +17,8 @@ class ReviewDetails extends StatelessWidget {
     const service = 'Answer 1 : ';
     const service1 = 'Answer 2 : ';
     const service2 = 'Answer 3 : ';
+    const service3 = 'Answer 4 : ';
+    const service4 = 'Answer 5 : ';
 
     return Scaffold(
       appBar: AppBar(
@@ -147,6 +149,66 @@ class ReviewDetails extends StatelessWidget {
                               ),
                               title: RichText(
                                 text: TextSpan(
+                                  text: service3,
+                                  style: TextStyle(
+                                    fontSize: screenWidth * 0.045,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  children: <TextSpan>[
+                                    TextSpan(
+                                      text: data.selectedTick == 'good'
+                                          ? '✅'
+                                          : '❌',
+                                      style: TextStyle(
+                                        fontSize: screenWidth * 0.045,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: screenHeight * 0.03),
+                            child: ListTile(
+                              leading: Icon(
+                                Icons.question_answer,
+                                color: mainColor,
+                                size: screenWidth * 0.075,
+                              ),
+                              title: RichText(
+                                text: TextSpan(
+                                  text: service4,
+                                  style: TextStyle(
+                                    fontSize: screenWidth * 0.045,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  children: <TextSpan>[
+                                    TextSpan(
+                                      text: data.selectedClose == 'good'
+                                          ? '✅'
+                                          : '❌',
+                                      style: TextStyle(
+                                        fontSize: screenWidth * 0.045,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: screenHeight * 0.03),
+                            child: ListTile(
+                              leading: Icon(
+                                Icons.question_answer,
+                                color: mainColor,
+                                size: screenWidth * 0.075,
+                              ),
+                              title: RichText(
+                                text: TextSpan(
                                   text: 'Description : ',
                                   style: TextStyle(
                                     fontSize: screenWidth * 0.045,
@@ -155,7 +217,9 @@ class ReviewDetails extends StatelessWidget {
                                   ),
                                   children: <TextSpan>[
                                     TextSpan(
-                                      text: (data.description),
+                                      text: data.description.isNotEmpty
+                                          ? (data.description)
+                                          : ('No vlaue from user'),
                                       style: TextStyle(
                                         fontSize: screenWidth * 0.045,
                                       ),

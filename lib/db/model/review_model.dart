@@ -18,6 +18,13 @@ class ReviewModel {
     @HiveField(4)
   final String description;
 
+  @HiveField(5)
+  final String selectedTick;
+
+  @HiveField(6)
+  final String selectedClose;
+
+
 
 
   ReviewModel({
@@ -25,11 +32,10 @@ class ReviewModel {
     required this.selectedSnack1,
     required this.selectedSnack2,
     required this.description,
-    this.id
+    required this.selectedTick,
+    required this.selectedClose,
+    this.id,
   });
 }
-
-
-
 
 

@@ -14,6 +14,7 @@ Widget kWidth(double width) {
 
 const Color mainColor = Color.fromARGB(224, 48, 166, 90);
 const Color buttonColor = Color.fromARGB(255, 227, 225, 219);
+const Color checkBoxClr = Color.fromARGB(255, 235, 234, 231);
 const LinearGradient buttonColor1 = LinearGradient(
   colors: [Colors.blue, Colors.green],
   begin: Alignment.centerLeft,

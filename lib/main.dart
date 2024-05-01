@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:review_system_kottakal_om/db/functions/db_functions.dart';
 import 'package:review_system_kottakal_om/db/model/review_model.dart';
-import 'package:review_system_kottakal_om/screens/landing_screen.dart';
 import 'package:review_system_kottakal_om/screens/splash.dart';
 
 void main() async {
@@ -16,12 +16,12 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    getAllReview();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Review System',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,

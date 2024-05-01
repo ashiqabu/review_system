@@ -28,8 +28,8 @@ class ThankYouDialog extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             const Text(
-              'Thank you for your valuable review!',
-              style: TextStyle(fontSize: 18),
+              'نشكركم على مشاركتكم لنا  والتى ستساهم في تطوير المركز',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
           ],

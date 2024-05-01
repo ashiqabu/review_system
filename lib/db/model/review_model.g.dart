@@ -21,6 +21,8 @@ class ReviewModelAdapter extends TypeAdapter<ReviewModel> {
       selectedSnack1: fields[2] as String,
       selectedSnack2: fields[3] as String,
       description: fields[4] as String,
+      selectedTick: fields[5] as String,
+      selectedClose: fields[6] as String,
       id: fields[0] as int?,
     );
   }
@@ -28,7 +30,7 @@ class ReviewModelAdapter extends TypeAdapter<ReviewModel> {
   @override
   void write(BinaryWriter writer, ReviewModel obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -38,7 +40,11 @@ class ReviewModelAdapter extends TypeAdapter<ReviewModel> {
       ..writeByte(3)
       ..write(obj.selectedSnack2)
       ..writeByte(4)
-      ..write(obj.description);
+      ..write(obj.description)
+      ..writeByte(5)
+      ..write(obj.selectedTick)
+      ..writeByte(6)
+      ..write(obj.selectedClose);
   }
 
   @override

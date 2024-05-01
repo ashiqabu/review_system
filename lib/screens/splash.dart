@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:review_system_kottakal_om/screens/landing_screen.dart'; // Import the widgets library for Duration
+import 'package:review_system_kottakal_om/db/functions/db_functions.dart';
+import 'package:review_system_kottakal_om/screens/videos/video_one.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    const splashDuration = Duration(seconds: 3);
+    getAllReview();
+    const splashDuration = Duration(seconds: 1);
 
     void navigateToNextScreen() {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => const LandingScreen(),
+          builder: (context) => const VideoOne(),
         ),
       );
     }
