@@ -41,98 +41,99 @@ class MobileScreen extends StatelessWidget {
         }
       },
       child: Scaffold(
-        body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(colors: [
-              Colors.white,
-              Color.fromARGB(255, 69, 185, 73),
-            ], begin: Alignment.topRight, end: Alignment.bottomLeft),
-          ),
-          height: size.height,
-          width: size.width,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset(
-                'assets/logo.png',
-                height: 150,
-                width: 150,
-              ),
-              GestureDetector(
-                onLongPress: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const PasswordScreen(),
-                    ),
-                  );
-                },
-                child: const Text('Its Review Time',
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Kalam')),
-              ),
-              kHeight(20),
-              Container(
-                child: Lottie.asset(
-                  'animations/Animation - 1699676750809.json',
-                  fit: BoxFit.cover,
+        body: SingleChildScrollView(
+          child: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(colors: [
+                Colors.white,
+                Color.fromARGB(255, 69, 185, 73),
+              ], begin: Alignment.topRight, end: Alignment.bottomLeft),
+            ),
+            height: size.height,
+            width: size.width,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/logo.png',
+                  height: 150,
+                  width: 150,
                 ),
-              ),
-              kHeight(20),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                    'من فضلك ساهم معنا في تقييم عمل موظفو المركز من خلال مشاركتك بتعبئة الاستبيان',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Kalam')),
-              ),
-              kHeight(20),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const AddReview(),
-                    ),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 10,
-                  ),
-                  elevation: 4,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Icon(
-                      Icons.arrow_forward_ios,
-                      size: 15,
-                      color: Colors.black,
-                    ),
-                    kWidth(10),
-                    const Text(
-                      'البدء',
+                GestureDetector(
+                  onLongPress: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PasswordScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text('Its Review Time',
                       style: TextStyle(
-                          color: Colors.black,
+                          fontSize: 30,
                           fontWeight: FontWeight.bold,
-                          fontSize: 15),
-                    ),
-                  ],
+                          fontFamily: 'Kalam')),
                 ),
-              ),
-            ],
+                kHeight(20),
+                Container(
+                  child: Lottie.asset(
+                    'animations/Animation - 1699676750809.json',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                kHeight(20),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                      'من فضلك ساهم معنا في تقييم عمل موظفو المركز من خلال مشاركتك بتعبئة الاستبيان',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Kalam')),
+                ),
+                kHeight(20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AddReview(),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 10,
+                    ),
+                    elevation: 4,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(
+                        Icons.arrow_forward_ios,
+                        size: 15,
+                        color: Colors.black,
+                      ),
+                      kWidth(10),
+                      const Text(
+                        'البدء',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

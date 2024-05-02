@@ -33,13 +33,18 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return FutureBuilder(
         future: _initailalizeVideoPlayerFutre,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return AspectRatio(
+            return Container(
+              width: size.width,
+              child: AspectRatio(
                 aspectRatio: _videoPlayerController.value.aspectRatio,
-                child: VideoPlayer(_videoPlayerController),);
+                child: VideoPlayer(_videoPlayerController),
+              ),
+            );
           } else {
             return const Center(child: CircularProgressIndicator());
           }

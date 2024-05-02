@@ -40,21 +40,26 @@ class _VideoTwoState extends State<VideoTwo> {
               child: VideoPlayerWidget(videoUrl: 'assets/video/video2.mp4'),
             ),
             Positioned(
-              // Position the button at the bottom right corner
-              bottom: 20.0, // Adjust margin from bottom as needed
-              right: 20.0, // Adjust margin from right as needed
+              bottom: 40.0,
+              right: 30.0,
               child: TextButton.icon(
                 onPressed: () => Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const HomeScreen())),
-                icon: const Icon(Icons.skip_next),
-                label: const Text('Review'),
+                icon: const Icon(
+                  Icons.skip_next_rounded,
+                  color: Colors.black,
+                ),
+                label: const Text(
+                  'Review',
+                  style: TextStyle(color: Colors.black),
+                ),
                 style: TextButton.styleFrom(
                   // Adjust button style (optional)
                   foregroundColor: Colors.white,
                   backgroundColor:
-                      Colors.black.withOpacity(0.5), // Button background
+                      Colors.white.withOpacity(0.5), // Button background
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0), // Button shape
                   ),

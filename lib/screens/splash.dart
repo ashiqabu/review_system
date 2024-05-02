@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:review_system_kottakal_om/db/functions/db_functions.dart';
-import 'package:review_system_kottakal_om/screens/videos/video_one.dart';
+import 'package:review_system_kottakal_om/screens/videos/video_two.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
     void navigateToNextScreen() {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => const VideoOne(),
+          builder: (context) => const VideoTwo(),
         ),
       );
     }

@@ -24,33 +24,24 @@ class _VideoOneState extends State<VideoOne> {
 
   @override
   Widget build(BuildContext context) {
+   
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.black, Colors.black],
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
+      backgroundColor: Colors.black,
+      body: Stack(
+        children: [
+          Center(
+            child: VideoPlayerWidget(videoUrl: 'assets/video/video1.mp4'),
           ),
-        ),
-        child: Stack(
-          children: [
-            const Center(
-              child: VideoPlayerWidget(videoUrl: 'assets/video/video1.mp4'),
-            ),
-            FutureBuilder(
-              future: _navigateToNextScreen,
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
-                  return Container();
-                }
+          FutureBuilder(
+            future: _navigateToNextScreen,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
                 return Container();
-              },
-            ),
-          ],
-        ),
+              }
+              return Container();
+            },
+          ),
+        ],
       ),
     );
   }
